@@ -14,4 +14,11 @@ public class ShopppingCart {
     public int getTotalCost() {
         return products.stream().mapToInt(Product::getPrice).sum();
     }
+
+    @Override
+    public String toString() {
+        return "ShopppingCart{" +
+                "products=" + products +
+                '}';
+    }
 }

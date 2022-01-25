@@ -7,4 +7,11 @@ public class CreditCard {
     CreditCard(long cardNumber) {
         this.cardNumber = cardNumber;
     }
+
+    @Override
+    public String toString() {
+        return "CreditCard{" +
+                "cardNumber=" + cardNumber +
+                '}';
+    }
 }
