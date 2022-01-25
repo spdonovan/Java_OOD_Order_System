@@ -4,14 +4,20 @@ public class Product {
 
     private final String name;
     private int price;
+    private int discount;
+    private ProductType type;
+    private int weight;
 
-    public Product(String name, int price) {
+    public Product(String name, int price, ProductType type, int weight) {
         this.name = name;
         this.price = price;
+        this.type = type;
+        this.weight = weight;
     }
 
     public int getPrice() {
-        return price;
+        int shippingCost = type.getShippingCost(weight);
+        return Math.round((1 - discount) * price) + shippingCost;
     }
 
     @Override
@@ -19,6 +25,8 @@ public class Product {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
+                ", type=" + type +
+                ", weight" + weight +
                 '}';
     }
 }
