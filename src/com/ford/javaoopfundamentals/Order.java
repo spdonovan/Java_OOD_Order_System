@@ -2,10 +2,10 @@ package com.ford.javaoopfundamentals;
 
 public class Order {
     private Customer customer;
-    private ShopppingCart cart;
+    private ShoppingCart cart;
     private Payment payment;
 
-    public Order(Customer customer, ShopppingCart cart, Payment payment) {
+    public Order(Customer customer, ShoppingCart cart, Payment payment) {
         this.customer = customer;
         this.cart = cart;
         this.payment = payment;
