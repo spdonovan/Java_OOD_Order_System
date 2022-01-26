@@ -1,9 +1,9 @@
 package com.ford.javaoopfundamentals;
 
 public class Order {
-    private Customer customer;
-    private ShoppingCart cart;
-    private Payment payment;
+    private final Customer customer;
+    private final ShoppingCart cart;
+    private final Payment payment;
 
     public Order(Customer customer, ShoppingCart cart, Payment payment) {
         this.customer = customer;
@@ -12,12 +12,14 @@ public class Order {
 
     }
 
+    public ShoppingCart getCart() { return cart; }
+
     @Override
     public String toString() {
         return "Order{" +
-                "customer=" + customer +
-                ", cart=" + cart +
-                ", payment=" + payment +
-                '}';
+                "\n customer=" + customer +
+                ",\n cart=" + cart +
+                ",\n payment=" + payment +
+                "\n}";
     }
 }

@@ -10,7 +10,16 @@ public class LineItem {
         this.quantity = quantity;
     }
 
+    public LineItem(LineItem li) { this(li.product, li.quantity); }
+
     public Product getProduct() { return product; }
+
+    public int getQuantity() { return quantity; }
+
+    public int getPrice() {
+        PriceCalculator priceCalculator = product.createPriceCalculator();
+        return priceCalculator.calculatePrice(quantity);
+    }
 
     @Override
     public String toString() {
@@ -20,8 +29,5 @@ public class LineItem {
                 '}';
     }
 
-    public int getPrice() {
-        return product.getPrice() * quantity;
-    }
 }
 

@@ -2,6 +2,7 @@ package com.ford.javaoopfundamentals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ShoppingCart {
 
@@ -11,8 +12,16 @@ public class ShoppingCart {
         lineItems.add(lineItem);
     }
 
+    public List<LineItem> getLineItems() {
+        return lineItems.stream()
+                .map(LineItem::new)
+                .collect(Collectors.toList());
+    }
+
     public int getTotalCost() {
-        return lineItems.stream().mapToInt(LineItem::getPrice).sum();
+        return lineItems.stream()
+                .mapToInt(LineItem::getPrice)
+                .sum();
     }
 
     @Override

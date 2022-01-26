@@ -2,6 +2,9 @@ package com.ford.javaoopfundamentals;
 
 import java.util.Map;
 
+import static com.ford.javaoopfundamentals.PhysicalProduct.ShippingCategory;
+import static com.ford.javaoopfundamentals.PhysicalProduct.ShippingCategory.*;
+
 public class PhysicalProductPriceCalculator implements PriceCalculator {
 
     private static final int BULK_COST_FACTOR = 1;

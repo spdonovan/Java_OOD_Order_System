@@ -15,8 +15,5 @@ public class Demo {
                 cart.addLineItem(toothbrushes);
                 System.out.println(cart.getTotalCost());
 
-                Customer scottDonovan = new Customer("Scott Donovan", 5432234567529854L);
-                Optional<Order> order = scottDonovan.checkout(cart);
-                System.out.println(order);
     }
 }
