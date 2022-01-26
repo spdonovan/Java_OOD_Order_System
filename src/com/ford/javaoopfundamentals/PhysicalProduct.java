@@ -2,13 +2,23 @@ package com.ford.javaoopfundamentals;
 
 public class PhysicalProduct extends Product {
 
-    private int weight;
-
-    public PhysicalProduct(String name, int price, int weight) {
-        super(name, price);
-        this.weight = weight;
+    public enum ShippingCategory {
+        BULKY, STANDARD, PREMIUM;
     }
 
+    private int weight;
+    private ShippingCategory shippingCategory;
+
+    public PhysicalProduct(String name, int basePrice, int weight, ShippingCategory shippingCategory) {
+        super(name, basePrice);
+        this.weight = weight;
+        this.shippingCategory = shippingCategory;
+    }
+
+    public int getWeight() { return weight; }
+
+    public ShippingCategory getShippingCategory() { return shippingCategory; }
+
     @Override
-    public int calculateShippingCost() { return Catalogue.SHIPPING_RATE * weight; }
+    public PriceCalculator createPriceCalculator() { return new PhysicalProductPriceCalculator(this); }
 }
